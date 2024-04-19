@@ -16,6 +16,7 @@ export class KiwiSynthesizer extends cdk.DefaultStackSynthesizer {
   bind(stack: cdk.Stack) {
     super.bind(stack);
 
+    // Add every forced tag to the Stack
     for (const tag in this.forcedTags) {
       cdk.Tags.of(this.boundStack).add(tag, this.forcedTags[tag]);
     }

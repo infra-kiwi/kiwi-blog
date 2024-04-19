@@ -2,6 +2,8 @@
 
 This example shows how to create a custom synthesizer, to forcefully populate the tags of the deployed stacks and relative resources.
 
+You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-force-tagging-all-stacks-with-a-git-repository-name-ee30ec7e6eae
+
 ## Usage
 
 Run:
