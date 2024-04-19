@@ -15,7 +15,7 @@ exports[`Forced synthesizer 1`] = `
         "Tags": [
           {
             "Key": "Repository",
-            "Value": "infra-kiwi/kiwi-blog",
+            "Value": "kiwi-blog",
           },
         ],
       },

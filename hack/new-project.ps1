@@ -24,6 +24,6 @@ Get-ChildItem -r *.* |
     }
 
 & npm install
-& npm lint
-& npm test
+& npm run lint
+& npm run test
 Pop-Location

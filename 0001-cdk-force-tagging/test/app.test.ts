@@ -6,11 +6,13 @@ import { getSynthesizer } from '../lib/synthesizer';
 test('Forced synthesizer', async () => {
   const app = new App();
 
-  const synthesizer = await getSynthesizer();
+  const synthesizer = await getSynthesizer({
+    ignoreGitHubOrganization: true
+  });
 
   // Make sure the synthesizer contains the forced tag
   const repositoryTag = synthesizer.forcedTags['Repository'];
-  expect(repositoryTag).toEqual('infra-kiwi/kiwi-blog');
+  expect(repositoryTag).toEqual('kiwi-blog');
 
   // Init stack
   const stack = new KiwiStack(app, 'Test', { synthesizer });
@@ -25,8 +27,7 @@ test('Forced synthesizer', async () => {
       // Make sure the SNS topic contains the forced tag
       Tags: [
         {
-          Key: 'Repository',
-          Value: 'infra-kiwi/kiwi-blog'
+          Key: 'Repository'
         }
       ]
     },
