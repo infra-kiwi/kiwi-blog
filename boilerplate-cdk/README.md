@@ -2,6 +2,11 @@
 
 This folder contains the boilerplate code for new CDK projects.
 
+## Important files
+
+* CDK entrypoint: [bin/app.ts](bin/app.ts)
+* Example stack: [lib/stack.ts](lib/stack.ts)
+
 ## Usage
 
 Run:

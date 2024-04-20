@@ -6,9 +6,9 @@ You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-force-ta
 
 ## Important files
 
-* CDK entrypoint: [app.ts](bin/app.ts)
-* Synthesizer definition and wrapper function: [synthesizer.ts](lib/synthesizer.ts)
-* Example stack: [stack.ts](lib/stack.ts)
+* CDK entrypoint: [bin/app.ts](bin/app.ts)
+* Synthesizer definition and wrapper function: [lib/synthesizer.ts](lib/synthesizer.ts)
+* Example stack: [lib/stack.ts](lib/stack.ts)
 
 ## Usage
 
