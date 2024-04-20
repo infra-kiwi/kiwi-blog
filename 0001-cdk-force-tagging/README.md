@@ -4,6 +4,12 @@ This example shows how to create a custom synthesizer, to forcefully populate th
 
 You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-force-tagging-all-stacks-with-a-git-repository-name-ee30ec7e6eae
 
+## Important files
+
+* CDK entrypoint: [app.ts](bin/app.ts)
+* Synthesizer definition and wrapper function: [synthesizer.ts](lib/synthesizer.ts)
+* Example stack: [stack.ts](lib/stack.ts)
+
 ## Usage
 
 Run:
