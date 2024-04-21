@@ -8,7 +8,7 @@ $source = 'boilerplate-cdk'
 $destination = (New-Item -Name $projectName -ItemType "directory").FullName
 
 $resolved = (Resolve-Path $source).Path
-$exclude = @('node_modules')
+$exclude = @('node_modules', 'cdk.out')
 
 Get-ChildItem $resolved -Exclude $exclude | Copy-Item -Recurse -Destination { Join-Path $destination $_.FullName.Substring($resolved.length) }
 
