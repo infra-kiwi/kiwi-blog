@@ -8,6 +8,8 @@ This example shows how to:
 2. Create a [client Lambda](./lib/lambda/client.ts) function in a **different account**, which will be able to access
    the authorized route.
 
+You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-iam-authorized-api-gateway-calls-733671bc9d17
+
 ## Important files
 
 * CDK entrypoint: [bin/app.ts](bin/app.ts)
