@@ -23,10 +23,21 @@ export class KiwiSynthesizer extends cdk.DefaultStackSynthesizer {
   }
 }
 
-export async function getSynthesizer(synthProps?: cdk.DefaultStackSynthesizerProps) {
+export interface GetSynthesizerProps {
+  // If true, the Repository tag will NOT contain
+  // the GitHub organization name
+  ignoreGitHubOrganization?: boolean;
+}
+
+export async function getSynthesizer(props?: GetSynthesizerProps, synthProps?: cdk.DefaultStackSynthesizerProps) {
   // Extract the current repository name
   const remoteUrl = (await simpleGit().remote(['get-url', 'origin']))!.trim();
-  const repository = /github.com[:/]([^/]+\/[^/]+)\.git/.exec(remoteUrl)![1];
+  console.debug(`Detected git remote url: ${remoteUrl}`);
+
+  let repository = /github.com[:/]([^/]+\/[^/]+?)(\.git)?$/.exec(remoteUrl)![1];
+  if (props?.ignoreGitHubOrganization) {
+    repository = repository.split('/')[1];
+  }
 
   return new KiwiSynthesizer({
     ...synthProps,
