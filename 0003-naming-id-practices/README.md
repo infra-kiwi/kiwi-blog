@@ -2,6 +2,8 @@
 
 This example shows how to define good, self-explaining AWS CDK construct IDs.
 
+You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-some-id-practices-0ecfdccca40a
+
 TL;DR: Wrap the IDs with the construct's class name!
 
 `super(scope, ${MyConstructClass.name}-${id});` is your friend!
