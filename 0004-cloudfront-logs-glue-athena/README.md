@@ -2,6 +2,8 @@
 
 This example shows how to query CloudFront logs using AWS Athena and AWS Glue.
 
+You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-querying-cloudfront-logs-in-aws-athena-d0c25e1356bf
+
 The data flow on the CloudFormation side of things is:
 
 ```mermaid

@@ -7,6 +7,7 @@ This repository contains working all the code examples related to the https://bl
 * [0001-cdk-force-tagging](./0001-cdk-force-tagging): This example shows how to create a custom synthesizer, to forcefully populate the tags of the deployed stacks and relative resources.
 * [0002-cdk-lambda-auth-api-gw](./0002-cdk-lambda-auth-api-gw): This example shows how to leverage IAM-authorized routes for API Gateways to allow external clients to make IAM-authorized requests.
 * [0003-naming-id-practices](./0003-naming-id-practices): This example shows how to define good, self-explaining AWS CDK construct IDs.
+* [0004-cloudfront-logs-glue-athena](./0004-cloudfront-logs-glue-athena): This example shows how to query CloudFront logs using AWS Athena and AWS Glue.
 
 ## Boilerplate (CDK)
 
