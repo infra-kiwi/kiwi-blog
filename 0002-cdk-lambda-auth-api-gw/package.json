@@ -30,7 +30,7 @@
     "@types/aws-lambda": "^8.10.137",
     "@types/jest": "^29.5.12",
     "@types/node": "20.11.30",
-    "aws-cdk": "2.137.0",
+    "aws-cdk": "^2.137.0",
     "aws-sigv4-fetch": "^3.1.0",
     "esbuild": "^0.20.2",
     "eslint-plugin-jest": "^28.2.0",
@@ -42,7 +42,7 @@
     "typescript-eslint": "^7.7.0"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.137.0",
+    "aws-cdk-lib": "^2.137.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
   }

@@ -23,9 +23,7 @@ Get-ChildItem -r *.* |
                 Set-Content $a
     }
 
-Remove-Item "$newModuleName/test/__snapshots__/app.test.ts.snap"
-
 & npm install
-& npm run lint
+& npm run lint:fix
 & npm run test
 Pop-Location
