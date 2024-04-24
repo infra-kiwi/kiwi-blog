@@ -2,6 +2,8 @@
 
 This example shows how to apply the CDK linting rules provided by [`cdk-nag`](https://github.com/cdklabs/cdk-nag).
 
+You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-nag-or-how-to-write-production-appropriate-cdk-code-4eee27e738c7
+
 ## Important files
 
 * CDK entrypoint: [bin/app.ts](bin/app.ts)
