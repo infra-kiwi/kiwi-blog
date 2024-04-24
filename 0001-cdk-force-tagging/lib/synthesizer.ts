@@ -29,7 +29,10 @@ export interface GetSynthesizerProps {
   ignoreGitHubOrganization?: boolean;
 }
 
-export async function getSynthesizer(props?: GetSynthesizerProps, synthProps?: cdk.DefaultStackSynthesizerProps) {
+export async function getSynthesizer(
+  props?: GetSynthesizerProps,
+  synthProps?: cdk.DefaultStackSynthesizerProps
+) {
   // Extract the current repository name
   const remoteUrl = (await simpleGit().remote(['get-url', 'origin']))!.trim();
   console.debug(`Detected git remote url: ${remoteUrl}`);

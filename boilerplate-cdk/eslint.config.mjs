@@ -19,9 +19,9 @@ export default tseslint.config({
   rules: {
   },
   ignores: [
-    'node_modules',
+    'node_modules/**',
     '*.d.ts',
-    'cdk.out',
+    'cdk.out/**',
     '*.config.mjs'
   ]
 });

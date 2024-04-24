@@ -2,8 +2,17 @@ import * as cdk from 'aws-cdk-lib';
 import { Aws, aws_iam, aws_lambda, CfnOutput } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as path from 'node:path';
-import { AuthorizationType, EndpointType, LambdaIntegration, RestApi } from 'aws-cdk-lib/aws-apigateway';
-import { AccountPrincipal, PolicyDocument, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import {
+  AuthorizationType,
+  EndpointType,
+  LambdaIntegration,
+  RestApi
+} from 'aws-cdk-lib/aws-apigateway';
+import {
+  AccountPrincipal,
+  PolicyDocument,
+  PolicyStatement
+} from 'aws-cdk-lib/aws-iam';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 
 export type ServerStackProps = cdk.StackProps & {
