@@ -35,7 +35,9 @@ function renderServer() {
   } else if (organizationId) {
     allowedPrincipals.push(new aws_iam.OrganizationPrincipal(organizationId));
   } else {
-    throw new Error('You need to provide either clientAccountId or organizationId');
+    throw new Error(
+      'You need to provide either clientAccountId or organizationId'
+    );
   }
 
   new ServerStack(app, projectName + '-server', {

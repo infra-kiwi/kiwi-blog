@@ -1,5 +1,11 @@
 import * as cdk from 'aws-cdk-lib';
-import { aws_cloudfront, aws_s3, CfnOutput, RemovalPolicy, Stack } from 'aws-cdk-lib';
+import {
+  aws_cloudfront,
+  aws_s3,
+  CfnOutput,
+  RemovalPolicy,
+  Stack
+} from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { HttpOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as aws_glue_alpha from '@aws-cdk/aws-glue-alpha';
@@ -78,13 +84,19 @@ export class CloudFrontStack extends cdk.Stack {
         { name: 'x_forwarded_for', type: aws_glue_alpha.Schema.STRING },
         { name: 'ssl_protocol', type: aws_glue_alpha.Schema.STRING },
         { name: 'ssl_cipher', type: aws_glue_alpha.Schema.STRING },
-        { name: 'x_edge_response_result_type', type: aws_glue_alpha.Schema.STRING },
+        {
+          name: 'x_edge_response_result_type',
+          type: aws_glue_alpha.Schema.STRING
+        },
         { name: 'cs_protocol_version', type: aws_glue_alpha.Schema.STRING },
         { name: 'fle_status', type: aws_glue_alpha.Schema.STRING },
         { name: 'fle_encrypted_fields', type: aws_glue_alpha.Schema.INTEGER },
         { name: 'c_port', type: aws_glue_alpha.Schema.INTEGER },
         { name: 'time_to_first_byte', type: aws_glue_alpha.Schema.FLOAT },
-        { name: 'x_edge_detailed_result_type', type: aws_glue_alpha.Schema.STRING },
+        {
+          name: 'x_edge_detailed_result_type',
+          type: aws_glue_alpha.Schema.STRING
+        },
         { name: 'sc_content_type', type: aws_glue_alpha.Schema.STRING },
         { name: 'sc_content_len', type: aws_glue_alpha.Schema.BIG_INT },
         { name: 'sc_range_start', type: aws_glue_alpha.Schema.BIG_INT },
