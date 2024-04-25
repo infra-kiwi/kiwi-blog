@@ -3,6 +3,8 @@
 This example shows you how to use the CDK `Lazy` function to generate a "static" value (such as text) using 
 the dynamic approach of having a function that adds a line at a time to the text.
 
+You can find the relative blog post at: https://blog.infra.kiwi/aws-cdk-how-to-be-lazy-4928c7c8b0fe
+
 ## Important files
 
 * The construct using the Lazy function: [lib/lazy-parameter.ts](lib/multi-line-parameter.ts)
