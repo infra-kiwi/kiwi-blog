@@ -26,4 +26,3 @@ Get-ChildItem -r *.* |
 & npm install
 & npm run lint:fix
 & npm run test
-Pop-Location

@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KiwiStack 1`] = `
+{
+  "Outputs": {
+    "MultiLineParameterMyParameterParameterName753EE65F": {
+      "Value": {
+        "Ref": "MultiLineParameterMyParameter1DD281EC",
+      },
+    },
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "ATopicAboutDNS62AFBFAA": {
+      "Type": "AWS::SNS::Topic",
+    },
+    "MultiLineParameterMyParameter1DD281EC": {
+      "Properties": {
+        "Name": "Test-my-parameter",
+        "Type": "String",
+        "Value": {
+          "Fn::Join": [
+            "",
+            [
+              "It's not DNS
+There's no way it's DNS
+It was DNS
+Here is a topic about DNS: ",
+              {
+                "Ref": "ATopicAboutDNS62AFBFAA",
+              },
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::SSM::Parameter",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;
