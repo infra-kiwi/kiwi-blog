@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - '**/*.md'
 
 jobs:
   find-changes:
@@ -37,11 +39,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ${{ matrix.directory }}/package.json
-      - name: Run tests
-        run: |
-          cd $INPUT_DIR
-          npm ci
-          npm run lint
-          npm run test:ci
-        env:
-          INPUT_DIR: ${{ matrix.directory }}
+      - name: Setup deps
+        working-directory: ${{ matrix.directory }}
+        run: npm ci
+      - name: Lint
+        working-directory: ${{ matrix.directory }}
+        run: npm run lint
+      - name: Test
+        working-directory: ${{ matrix.directory }}
+        run: npm run test:ci

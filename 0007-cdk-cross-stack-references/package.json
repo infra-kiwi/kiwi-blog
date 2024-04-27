@@ -1,5 +1,5 @@
 {
-  "name": "kiwi-blog-0003-naming-id-practices",
+  "name": "kiwi-blog-0007-cdk-cross-stack-references",
   "version": "0.1.0",
   "engines": {
     "node": "20"
@@ -16,9 +16,9 @@
     "cdk": "cdk",
     "cdk:diff": "cdk diff",
     "cdk:deploy": "cdk deploy",
-    "cdk:destroy": "cdk destroy",
-    "cdk:deploy:all": "cdk deploy --all",
-    "cdk:destroy:all": "cdk destroy --all",
+    "cdk:destroy": "cdk destroy ",
+    "cdk:deploy:all": "cdk deploy --all --concurrency 10",
+    "cdk:destroy:all": "cdk destroy --all --concurrency 10",
     "cdk:synth": "cdk synth --version-reporting false --asset-metadata false",
     "lint": "npm run check && npm run lint:prettier && npm run lint:eslint",
     "lint:fix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint",

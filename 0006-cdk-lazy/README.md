@@ -17,7 +17,7 @@ Run:
 
 ```shell
 npm install
-npm run cdk:deploy
+npm run cdk:deploy:all
 ```
 
 Take note of the `ParameterName` output. 
@@ -43,7 +43,7 @@ Note: if you altered the code, make sure to replace `kiwi-blog-0006-cdk-lazy-my-
 Then, you can destroy the deployed infrastructure with:
 
 ```shell
-npm run cdk:destroy
+npm run cdk:destroy:all
 ```
 
 ## Useful commands
@@ -55,10 +55,10 @@ npm run cdk:destroy
 npm run cdk:diff
 
 # Runs the CDK deployment
-npm run cdk:deploy
+npm run cdk:deploy:all
 
 # Destroys all the CDK deployment resources
-npm run cdk:destroy
+npm run cdk:destroy:all
 
 # Shows the synthesized CloudFormation template
 npm run cdk:synth

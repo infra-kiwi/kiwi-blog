@@ -28,7 +28,7 @@ Run:
 
 ```shell
 npm install
-npm run cdk:deploy
+npm run cdk:deploy:all
 ```
 
 Verify the execution by opening the AWS Console and looking at the deployed resources for both the
@@ -40,7 +40,7 @@ the `kiwi-blog-0003-naming-id-practices-good-name` stack!
 Then, you can destroy the deployed infrastructure with:
 
 ```shell
-npm run cdk:destroy
+npm run cdk:destroy:all
 ```
 
 ## Useful commands
@@ -52,10 +52,10 @@ npm run cdk:destroy
 npm run cdk:diff
 
 # Runs the CDK deployment
-npm run cdk:deploy
+npm run cdk:deploy:all
 
 # Destroys all the CDK deployment resources
-npm run cdk:destroy
+npm run cdk:destroy:all
 
 # Shows the synthesized CloudFormation template
 npm run cdk:synth

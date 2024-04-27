@@ -6,16 +6,19 @@ import { KiwiStack } from '../lib/stack';
 import { name as projectName } from '../package.json';
 import { getSynthesizer } from '../lib/synthesizer';
 
+// https://docs.aws.amazon.com/cdk/v2/guide/environments.html
+// Use the current environment variables to figure out which account
+// and region we want to deploy to
+const env: cdk.Environment = {
+  account: process.env.CDK_DEFAULT_ACCOUNT,
+  region: process.env.CDK_DEFAULT_REGION
+};
+
 const app = new cdk.App();
 
 async function main() {
   new KiwiStack(app, projectName, {
-    // Use the current environment variables to figure out which account
-    // and region we want to deploy to
-    env: {
-      account: process.env.CDK_DEFAULT_ACCOUNT,
-      region: process.env.CDK_DEFAULT_REGION
-    },
+    env,
 
     // Use our custom tagging synthesizer
     synthesizer: await getSynthesizer()

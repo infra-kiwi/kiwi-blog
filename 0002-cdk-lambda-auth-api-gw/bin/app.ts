@@ -6,19 +6,20 @@ import { name as projectName } from '../package.json';
 import { ServerStack } from '../lib/stacks/server-stack';
 import { ClientStack } from '../lib/stacks/client-stack';
 
+// https://docs.aws.amazon.com/cdk/v2/guide/environments.html
+// Use the current environment variables to figure out which account
+// and region we want to deploy to
+const env: cdk.Environment = {
+  account: process.env.CDK_DEFAULT_ACCOUNT,
+  region: process.env.CDK_DEFAULT_REGION
+};
+
 const app = new cdk.App();
 
 // We expect this variable to be provided at deploy time,
 // which will decide if we are deploying the server stack
 // or the client stack
 const component = app.node.getContext('component');
-
-// Use the current environment variables to figure out which account
-// and region we want to deploy to
-const env = {
-  account: process.env.CDK_DEFAULT_ACCOUNT,
-  region: process.env.CDK_DEFAULT_REGION
-};
 
 function renderServer() {
   // We can, for example, either authorize an account or even the

@@ -48,7 +48,7 @@ Run:
 
 ```shell
 npm install
-npm run cdk:deploy
+npm run cdk:deploy:all
 ```
 
 Take note of the various outputs:
@@ -85,7 +85,7 @@ You should now be able to see the CloudFront logs and the previous requests you 
 Then, you can destroy the deployed infrastructure with:
 
 ```shell
-npm run cdk:destroy
+npm run cdk:destroy:all
 ```
 
 ## Useful commands
@@ -97,10 +97,10 @@ npm run cdk:destroy
 npm run cdk:diff
 
 # Runs the CDK deployment
-npm run cdk:deploy
+npm run cdk:deploy:all
 
 # Destroys all the CDK deployment resources
-npm run cdk:destroy
+npm run cdk:destroy:all
 
 # Shows the synthesized CloudFormation template
 npm run cdk:synth
