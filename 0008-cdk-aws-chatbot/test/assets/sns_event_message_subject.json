@@ -1,0 +1,16 @@
+{
+  "Records": [
+    {
+      "EventSource": "aws:sns",
+      "EventVersion": "1.0",
+      "EventSubscriptionArn": "arn:aws:sns:us-east-1:123456789012:chatbot-notifs:e4cdacc5-2a3a-404a-adbb-855fb35b8719",
+      "Sns": {
+        "Type": "Notification",
+        "TopicArn": "arn:aws:sns:us-east-1:123456789012:chatbot-notifs",
+        "Subject": "Hello world!",
+        "Message": "What a pretty day 🌻",
+        "Timestamp": "2024-05-01T03:35:29.320Z"
+      }
+    }
+  ]
+}

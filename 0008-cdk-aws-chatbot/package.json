@@ -1,5 +1,5 @@
 {
-  "name": "kiwi-blog-boilerplate-cdk",
+  "name": "kiwi-blog-0008-cdk-aws-chatbot",
   "version": "0.1.0",
   "engines": {
     "node": "20"
@@ -17,8 +17,6 @@
     "cdk:diff": "cdk diff",
     "cdk:deploy": "cdk deploy --require-approval never",
     "cdk:destroy": "cdk destroy",
-    "cdk:deploy:all": "cdk deploy --require-approval never --all",
-    "cdk:destroy:all": "cdk destroy --all",
     "cdk:synth": "cdk synth --version-reporting false --asset-metadata false",
     "lint": "npm run check && npm run lint:prettier && npm run lint:eslint",
     "lint:fix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint",
@@ -28,6 +26,7 @@
     "lint:eslint:fix": "npm run lint:eslint -- --fix"
   },
   "devDependencies": {
+    "@aws-sdk/client-sns": "^3.565.0",
     "@eslint/js": "^9.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "20.11.30",
@@ -41,7 +40,8 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "~5.4.3",
-    "typescript-eslint": "^7.7.0"
+    "typescript-eslint": "^7.7.0",
+    "yaml": "^2.4.2"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.137.0",

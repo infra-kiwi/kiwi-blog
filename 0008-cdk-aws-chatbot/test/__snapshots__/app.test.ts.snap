@@ -1,0 +1,824 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatBotStack 1`] = `
+{
+  "Outputs": {
+    "ChatBotSlackChannelChatBotSlackChannelT1234C1234ConfigurationUrl0ADB8ABA": {
+      "Value": "https://console.aws.amazon.com/chatbot/home?#/chat-clients/slack/workspaces/T1234/configurations/slack-T1234-C1234",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C1234TopicArn6B64EFF3": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "arn:",
+            {
+              "Ref": "AWS::Partition",
+            },
+            ":sns:",
+            {
+              "Ref": "AWS::Region",
+            },
+            ":",
+            {
+              "Ref": "AWS::AccountId",
+            },
+            ":Test-chatbot-raw-T1234-C1234",
+          ],
+        ],
+      },
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C5678ConfigurationUrlFDF9648B": {
+      "Value": "https://console.aws.amazon.com/chatbot/home?#/chat-clients/slack/workspaces/T1234/configurations/slack-T1234-C5678",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C5678TopicArn41353A77": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "arn:",
+            {
+              "Ref": "AWS::Partition",
+            },
+            ":sns:",
+            {
+              "Ref": "AWS::Region",
+            },
+            ":",
+            {
+              "Ref": "AWS::AccountId",
+            },
+            ":Test-chatbot-raw-T1234-C5678",
+          ],
+        ],
+      },
+    },
+    "PostToSlackSlackLambdamychannel2TopicArn6FD825F5": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "arn:",
+            {
+              "Ref": "AWS::Partition",
+            },
+            ":sns:",
+            {
+              "Ref": "AWS::Region",
+            },
+            ":",
+            {
+              "Ref": "AWS::AccountId",
+            },
+            ":chatbot-my-channel-2",
+          ],
+        ],
+      },
+    },
+    "PostToSlackSlackLambdamychannel3TopicArn44107F85": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "arn:",
+            {
+              "Ref": "AWS::Partition",
+            },
+            ":sns:",
+            {
+              "Ref": "AWS::Region",
+            },
+            ":",
+            {
+              "Ref": "AWS::AccountId",
+            },
+            ":chatbot-my-channel-3",
+          ],
+        ],
+      },
+    },
+    "PostToSlackSlackLambdamychannelTopicArn1ABD0783": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "arn:",
+            {
+              "Ref": "AWS::Partition",
+            },
+            ":sns:",
+            {
+              "Ref": "AWS::Region",
+            },
+            ":",
+            {
+              "Ref": "AWS::AccountId",
+            },
+            ":chatbot-my-channel",
+          ],
+        ],
+      },
+    },
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "ChatBotSlackChannelChatBotSlackChannelT1234C1234SNSTopicB65800E8": {
+      "Properties": {
+        "TopicName": "Test-chatbot-raw-T1234-C1234",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C1234SlackChannel371F35AC": {
+      "Properties": {
+        "ConfigurationName": "slack-T1234-C1234",
+        "IamRoleArn": {
+          "Fn::GetAtt": [
+            "ChatBotSlackChannelChatBotSlackChannelT1234C1234SlackChannelConfigurationRole6D8470B6",
+            "Arn",
+          ],
+        },
+        "LoggingLevel": "INFO",
+        "SlackChannelId": "C1234",
+        "SlackWorkspaceId": "T1234",
+        "SnsTopicArns": [
+          {
+            "Ref": "ChatBotSlackChannelChatBotSlackChannelT1234C1234SNSTopicB65800E8",
+          },
+        ],
+      },
+      "Type": "AWS::Chatbot::SlackChannelConfiguration",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C1234SlackChannelConfigurationRole6D8470B6": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "chatbot.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C1234SlackChannelLogRetentionCC3F095A": {
+      "Properties": {
+        "LogGroupName": "/aws/chatbot/slack-T1234-C1234",
+        "LogGroupRegion": "us-east-1",
+        "RetentionInDays": 30,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C5678SNSTopic255E9BF3": {
+      "Properties": {
+        "TopicName": "Test-chatbot-raw-T1234-C5678",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C5678SlackChannel2699C235": {
+      "Properties": {
+        "ConfigurationName": "slack-T1234-C5678",
+        "IamRoleArn": {
+          "Fn::GetAtt": [
+            "ChatBotSlackChannelChatBotSlackChannelT1234C5678SlackChannelConfigurationRoleDC1CA40E",
+            "Arn",
+          ],
+        },
+        "LoggingLevel": "INFO",
+        "SlackChannelId": "C5678",
+        "SlackWorkspaceId": "T1234",
+        "SnsTopicArns": [
+          {
+            "Ref": "ChatBotSlackChannelChatBotSlackChannelT1234C5678SNSTopic255E9BF3",
+          },
+        ],
+      },
+      "Type": "AWS::Chatbot::SlackChannelConfiguration",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C5678SlackChannelConfigurationRoleDC1CA40E": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "chatbot.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ChatBotSlackChannelChatBotSlackChannelT1234C5678SlackChannelLogRetention8C4204AF": {
+      "Properties": {
+        "LogGroupName": "/aws/chatbot/slack-T1234-C5678",
+        "LogGroupRegion": "us-east-1",
+        "RetentionInDays": 30,
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": {
+      "DependsOn": [
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35.zip",
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs18.x",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:PutRetentionPolicy",
+                "logs:DeleteRetentionPolicy",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "Roles": [
+          {
+            "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "PostToSlackSlackLambdamychannel2SNSTopicD770D013": {
+      "Properties": {
+        "TopicName": "chatbot-my-channel-2",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "PostToSlackSlackLambdamychannel2SlackLambda51F3385A": {
+      "DependsOn": [
+        "PostToSlackSlackLambdamychannel2SlackLambdaServiceRoleDefaultPolicyEF945B0E",
+        "PostToSlackSlackLambdamychannel2SlackLambdaServiceRole88899726",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "69648fa6d2afaa97402c4df6b21dbf01e48dc1b7e1f5c67d08b579067cf88f62.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "SNS_TOPIC_ARN": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition",
+                  },
+                  ":sns:",
+                  {
+                    "Ref": "AWS::Region",
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId",
+                  },
+                  ":Test-chatbot-raw-T1234-C5678",
+                ],
+              ],
+            },
+          },
+        },
+        "FunctionName": "Test-slack-chatbot-my-channel-2",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannel2SlackLambdaServiceRole88899726",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs20.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "PostToSlackSlackLambdamychannel2SlackLambdaAllowInvokeTestPostToSlackSlackLambdamychannel2SNSTopicD1F8D2C808E15E4F": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannel2SlackLambda51F3385A",
+            "Arn",
+          ],
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": {
+          "Ref": "PostToSlackSlackLambdamychannel2SNSTopicD770D013",
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "PostToSlackSlackLambdamychannel2SlackLambdaSNSTopic6DA2D742": {
+      "Properties": {
+        "Endpoint": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannel2SlackLambda51F3385A",
+            "Arn",
+          ],
+        },
+        "Protocol": "lambda",
+        "TopicArn": {
+          "Ref": "PostToSlackSlackLambdamychannel2SNSTopicD770D013",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+    "PostToSlackSlackLambdamychannel2SlackLambdaServiceRole88899726": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "PostToSlackSlackLambdamychannel2SlackLambdaServiceRoleDefaultPolicyEF945B0E": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sns:Publish",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":sns:",
+                    {
+                      "Ref": "AWS::Region",
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId",
+                    },
+                    ":Test-chatbot-raw-T1234-C5678",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "PostToSlackSlackLambdamychannel2SlackLambdaServiceRoleDefaultPolicyEF945B0E",
+        "Roles": [
+          {
+            "Ref": "PostToSlackSlackLambdamychannel2SlackLambdaServiceRole88899726",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "PostToSlackSlackLambdamychannel3SNSTopic5D95AABB": {
+      "Properties": {
+        "TopicName": "chatbot-my-channel-3",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "PostToSlackSlackLambdamychannel3SlackLambdaAllowInvokeTestPostToSlackSlackLambdamychannel3SNSTopic53A6C2E1BA94893B": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannel3SlackLambdaFE36F36B",
+            "Arn",
+          ],
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": {
+          "Ref": "PostToSlackSlackLambdamychannel3SNSTopic5D95AABB",
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "PostToSlackSlackLambdamychannel3SlackLambdaFE36F36B": {
+      "DependsOn": [
+        "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDefaultPolicyF91082F7",
+        "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDF7C4C06",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "69648fa6d2afaa97402c4df6b21dbf01e48dc1b7e1f5c67d08b579067cf88f62.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "SNS_TOPIC_ARN": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition",
+                  },
+                  ":sns:",
+                  {
+                    "Ref": "AWS::Region",
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId",
+                  },
+                  ":Test-chatbot-raw-T1234-C1234",
+                ],
+              ],
+            },
+          },
+        },
+        "FunctionName": "Test-slack-chatbot-my-channel-3",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDF7C4C06",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs20.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "PostToSlackSlackLambdamychannel3SlackLambdaSNSTopic4567FD95": {
+      "Properties": {
+        "Endpoint": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannel3SlackLambdaFE36F36B",
+            "Arn",
+          ],
+        },
+        "Protocol": "lambda",
+        "TopicArn": {
+          "Ref": "PostToSlackSlackLambdamychannel3SNSTopic5D95AABB",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+    "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDF7C4C06": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDefaultPolicyF91082F7": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sns:Publish",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":sns:",
+                    {
+                      "Ref": "AWS::Region",
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId",
+                    },
+                    ":Test-chatbot-raw-T1234-C1234",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDefaultPolicyF91082F7",
+        "Roles": [
+          {
+            "Ref": "PostToSlackSlackLambdamychannel3SlackLambdaServiceRoleDF7C4C06",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "PostToSlackSlackLambdamychannelSNSTopic6F5F2942": {
+      "Properties": {
+        "TopicName": "chatbot-my-channel",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "PostToSlackSlackLambdamychannelSlackLambda4496A26D": {
+      "DependsOn": [
+        "PostToSlackSlackLambdamychannelSlackLambdaServiceRoleDefaultPolicy80E5755D",
+        "PostToSlackSlackLambdamychannelSlackLambdaServiceRole75730855",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "69648fa6d2afaa97402c4df6b21dbf01e48dc1b7e1f5c67d08b579067cf88f62.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "SNS_TOPIC_ARN": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition",
+                  },
+                  ":sns:",
+                  {
+                    "Ref": "AWS::Region",
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId",
+                  },
+                  ":Test-chatbot-raw-T1234-C1234",
+                ],
+              ],
+            },
+          },
+        },
+        "FunctionName": "Test-slack-chatbot-my-channel",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannelSlackLambdaServiceRole75730855",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs20.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "PostToSlackSlackLambdamychannelSlackLambdaAllowInvokeTestPostToSlackSlackLambdamychannelSNSTopic798371FB5206BF55": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannelSlackLambda4496A26D",
+            "Arn",
+          ],
+        },
+        "Principal": "sns.amazonaws.com",
+        "SourceArn": {
+          "Ref": "PostToSlackSlackLambdamychannelSNSTopic6F5F2942",
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "PostToSlackSlackLambdamychannelSlackLambdaSNSTopicF0A53D2E": {
+      "Properties": {
+        "Endpoint": {
+          "Fn::GetAtt": [
+            "PostToSlackSlackLambdamychannelSlackLambda4496A26D",
+            "Arn",
+          ],
+        },
+        "Protocol": "lambda",
+        "TopicArn": {
+          "Ref": "PostToSlackSlackLambdamychannelSNSTopic6F5F2942",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+    "PostToSlackSlackLambdamychannelSlackLambdaServiceRole75730855": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "PostToSlackSlackLambdamychannelSlackLambdaServiceRoleDefaultPolicy80E5755D": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sns:Publish",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":sns:",
+                    {
+                      "Ref": "AWS::Region",
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId",
+                    },
+                    ":Test-chatbot-raw-T1234-C1234",
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "PostToSlackSlackLambdamychannelSlackLambdaServiceRoleDefaultPolicy80E5755D",
+        "Roles": [
+          {
+            "Ref": "PostToSlackSlackLambdamychannelSlackLambdaServiceRole75730855",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;

@@ -1,0 +1,10 @@
+*.js
+!jest.config.js
+!eslint.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+config.yml

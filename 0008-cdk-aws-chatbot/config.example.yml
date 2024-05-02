@@ -1,0 +1,7 @@
+notificationChannels:
+
+  # Will be available as chatbot-infra-alerts
+  infra-alerts:
+
+    slackWorkspaceId: T01234567
+    slackChannelId: C0123456789
