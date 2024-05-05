@@ -1,0 +1,537 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KiwiStack 1`] = `
+{
+  "Outputs": {
+    "ErrorCatcherLambdaCatchErrorCatcherLambdaFunctionNameFEA549AD": {
+      "Value": {
+        "Ref": "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A",
+      },
+    },
+    "ErrorCatcherLambdaCatchErrorCatcherLambdaLogGroupName46F9559A": {
+      "Value": {
+        "Fn::GetAtt": [
+          "ErrorCatcherLambdaCatchErrorCatcherLambdaLogRetention92241BA3",
+          "LogGroupName",
+        ],
+      },
+    },
+    "TestLambdaJSONLogsFunctionName": {
+      "Value": {
+        "Ref": "TestLambdaJSONLogs89186D26",
+      },
+    },
+    "TestLambdaTextLogsFunctionName": {
+      "Value": {
+        "Ref": "TestLambdaTextLogsB2B2502E",
+      },
+    },
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A": {
+      "DependsOn": [
+        "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRoleDefaultPolicy6AFD8BC9",
+        "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRole8C378809",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "fb84d24ddff9bbeab34490acb542b6c2887febed40eefa7e769bb71c9632b8f6.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "ERRORS_SNS_TOPIC_ARN": "arn:aws:sns:my-region:123456789012:chatbot-my-channel",
+          },
+        },
+        "FunctionName": "Test-ErrorCatcherLambda-Catch",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRole8C378809",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs20.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "ErrorCatcherLambdaCatchErrorCatcherLambdaLogRetention92241BA3": {
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A",
+              },
+            ],
+          ],
+        },
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRole8C378809": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRoleDefaultPolicy6AFD8BC9": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sns:Publish",
+              "Effect": "Allow",
+              "Resource": "arn:aws:sns:my-region:123456789012:chatbot-my-channel",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRoleDefaultPolicy6AFD8BC9",
+        "Roles": [
+          {
+            "Ref": "ErrorCatcherLambdaCatchErrorCatcherLambdaServiceRole8C378809",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": {
+      "DependsOn": [
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35.zip",
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs18.x",
+        "Timeout": 900,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:PutRetentionPolicy",
+                "logs:DeleteRetentionPolicy",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "Roles": [
+          {
+            "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "TestLambdaJSONLogs89186D26": {
+      "DependsOn": [
+        "TestLambdaJSONLogsServiceRole988842C6",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "a767cc3c3a836ec15d583d373cbb22a52b5d75e6870efa121b9b18adc4bea6b0.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+          },
+        },
+        "FunctionName": "Testtest-lambda-json",
+        "Handler": "index.handler",
+        "LoggingConfig": {
+          "LogFormat": "JSON",
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "TestLambdaJSONLogsServiceRole988842C6",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs20.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "TestLambdaJSONLogsLogRetention4E685B0D": {
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "TestLambdaJSONLogs89186D26",
+              },
+            ],
+          ],
+        },
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "TestLambdaJSONLogsServiceRole988842C6": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "TestLambdaJSONLogsTestLambdaJSONLogsLogGroupErrorCatcherC898E084": {
+      "DependsOn": [
+        "TestLambdaJSONLogsTestLambdaJSONLogsLogGroupErrorCatcherCanInvokeLambdaB779375C",
+      ],
+      "Properties": {
+        "DestinationArn": {
+          "Fn::GetAtt": [
+            "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A",
+            "Arn",
+          ],
+        },
+        "FilterPattern": "{ $.level = "ERROR" }",
+        "LogGroupName": {
+          "Fn::GetAtt": [
+            "TestLambdaJSONLogsLogRetention4E685B0D",
+            "LogGroupName",
+          ],
+        },
+      },
+      "Type": "AWS::Logs::SubscriptionFilter",
+    },
+    "TestLambdaJSONLogsTestLambdaJSONLogsLogGroupErrorCatcherCanInvokeLambdaB779375C": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A",
+            "Arn",
+          ],
+        },
+        "Principal": "logs.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":logs:",
+              {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":log-group:",
+              {
+                "Fn::GetAtt": [
+                  "TestLambdaJSONLogsLogRetention4E685B0D",
+                  "LogGroupName",
+                ],
+              },
+              ":*",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "TestLambdaTextLogsB2B2502E": {
+      "DependsOn": [
+        "TestLambdaTextLogsServiceRoleD704F9A8",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "a767cc3c3a836ec15d583d373cbb22a52b5d75e6870efa121b9b18adc4bea6b0.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+          },
+        },
+        "FunctionName": "Testtest-lambda-text",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "TestLambdaTextLogsServiceRoleD704F9A8",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs20.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "TestLambdaTextLogsLogRetentionDA2424DD": {
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
+            "",
+            [
+              "/aws/lambda/",
+              {
+                "Ref": "TestLambdaTextLogsB2B2502E",
+              },
+            ],
+          ],
+        },
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "TestLambdaTextLogsServiceRoleD704F9A8": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "TestLambdaTextLogsTestLambdaTextLogsLogGroupErrorCatcher16FAC8E8": {
+      "DependsOn": [
+        "TestLambdaTextLogsTestLambdaTextLogsLogGroupErrorCatcherCanInvokeLambda87C5F430",
+      ],
+      "Properties": {
+        "DestinationArn": {
+          "Fn::GetAtt": [
+            "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A",
+            "Arn",
+          ],
+        },
+        "FilterPattern": "%^[T:Z\\d.-]+\\t[\\w-]+\\tERROR%",
+        "LogGroupName": {
+          "Fn::GetAtt": [
+            "TestLambdaTextLogsLogRetentionDA2424DD",
+            "LogGroupName",
+          ],
+        },
+      },
+      "Type": "AWS::Logs::SubscriptionFilter",
+    },
+    "TestLambdaTextLogsTestLambdaTextLogsLogGroupErrorCatcherCanInvokeLambda87C5F430": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ErrorCatcherLambdaCatchErrorCatcherLambdaB80EEA1A",
+            "Arn",
+          ],
+        },
+        "Principal": "logs.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":logs:",
+              {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":log-group:",
+              {
+                "Fn::GetAtt": [
+                  "TestLambdaTextLogsLogRetentionDA2424DD",
+                  "LogGroupName",
+                ],
+              },
+              ":*",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;

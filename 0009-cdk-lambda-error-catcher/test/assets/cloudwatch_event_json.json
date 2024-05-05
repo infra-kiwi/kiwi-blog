@@ -1,0 +1,16 @@
+{
+  "messageType": "DATA_MESSAGE",
+  "owner": "123456789012",
+  "logGroup": "/aws/lambda/kiwi-blog-0009-cdk-lambda-error-catchertest-lambda-json",
+  "logStream": "2024/05/04/[$LATEST]75d7d4c7812544a5aee65bd413ee8d33",
+  "subscriptionFilters": [
+    "kiwi-blog-0009-cdk-lambda-error-catcher-TestLambdaJSONLogsTestLambdaJSONLogsLogGroupErrorCatcherC898E084-11eMjaGEjPgF"
+  ],
+  "logEvents": [
+    {
+      "id": "38241282679343305534825973659543398526898726925601406977",
+      "timestamp": 1714798422156,
+      "message": "{\"timestamp\":\"2024-05-04T04:53:42.156Z\",\"level\":\"ERROR\",\"requestId\":\"edb3a3c7-99c4-47c2-b1f1-728182080257\",\"message\":{\"errorType\":\"Error\",\"errorMessage\":\"This error was thrown!\",\"stackTrace\":[\"Error: This error was thrown!\",\"    at Runtime.handler (/var/task/index.js:28:11)\",\"    at Runtime.handleOnceNonStreaming (file:///var/runtime/index.mjs:1173:29)\"]}}"
+    }
+  ]
+}

@@ -16,7 +16,8 @@ updates:
       - "/0006-cdk-lazy"
       - "/0007-cdk-cross-stack-references"
       - "/0008-cdk-aws-chatbot"
-      
+      - "/0009-cdk-lambda-error-catcher"
+
       # - "/"
     schedule:
       interval: "daily"
