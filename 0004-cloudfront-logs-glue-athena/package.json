@@ -31,7 +31,7 @@
     "@aws-cdk/aws-glue-alpha": "^2.138.0-alpha.0",
     "@eslint/js": "^9.2.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "20.12.8",
+    "@types/node": "20.12.10",
     "aws-cdk": "^2.140.0",
     "esbuild": "^0.20.2",
     "eslint-plugin-jest": "^28.5.0",

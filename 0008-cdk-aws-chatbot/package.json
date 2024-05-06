@@ -29,7 +29,7 @@
     "@aws-sdk/client-sns": "^3.569.0",
     "@eslint/js": "^9.2.0",
     "@types/jest": "^29.5.12",
-    "@types/node": "20.12.8",
+    "@types/node": "20.12.10",
     "aws-cdk": "^2.140.0",
     "aws-sdk-client-mock": "^4.0.0",
     "cross-env": "^7.0.3",
