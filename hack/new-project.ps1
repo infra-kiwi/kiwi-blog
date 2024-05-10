@@ -17,12 +17,18 @@ $newModuleName = 'kiwi-blog-' + $projectName
 Push-Location -EA Stop $destination
 # Replace all entries of the boilerplate project name
 Get-ChildItem -r *.* |
-    ForEach-Object {
-        $a = $_.fullname; (Get-Content $a) |
-                ForEach-Object { $_ -Replace "kiwi-blog-boilerplate-cdk",$newModuleName } |
-                Set-Content $a
-    }
+        ForEach-Object {
+            $a = $_.fullname; (Get-Content $a) |
+                    ForEach-Object { $_ -Replace "kiwi-blog-boilerplate-cdk", $newModuleName } |
+                    Set-Content $a
+        }
 
 & npm install
 & npm run lint:fix
 & npm run test
+
+Pop-Location
+
+& "$PSScriptRoot/fix-dependabot.ps1"
+
+Push-Location -EA Stop $destination

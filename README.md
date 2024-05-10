@@ -14,6 +14,8 @@ This repository contains working all the code examples related to the https://bl
 * [0008-cdk-aws-chatbot](./0008-cdk-aws-chatbot): This example shows how to configure the AWS ChatBot to send messages to Slack by creating a notification pipeline that
   accepts a custom message payload format.
 * [0009-cdk-lambda-error-catcher](./0009-cdk-lambda-error-catcher): This example shows you how you can catch Lambda function error messages and (optionally) post them to a Slack channel.
+* [0010-cdk-shared-items](./0010-cdk-shared-items): This example shows how to use the "shared items" concept to share an EventBus among multiple stacks, without
+  having to explicitly pass around the dependency.
 
 ## Boilerplate (CDK)
 

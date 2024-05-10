@@ -17,7 +17,6 @@ updates:
       - "/0007-cdk-cross-stack-references"
       - "/0008-cdk-aws-chatbot"
       - "/0009-cdk-lambda-error-catcher"
-
-      # - "/"
+      - "/0010-cdk-shared-items"
     schedule:
       interval: "daily"
