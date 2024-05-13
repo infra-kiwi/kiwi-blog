@@ -2,6 +2,8 @@
 
 This example shows some use cases of the AWS CDK [Aspects](https://docs.aws.amazon.com/cdk/v2/guide/aspects.html) feature. 
 
+You can find the related blog post at: https://blog.infra.kiwi/aws-cdk-aspects-and-custom-validations-bc2040c07a97
+
 ## Important files
 
 * CDK entrypoint: [bin/app.ts](bin/app.ts)
