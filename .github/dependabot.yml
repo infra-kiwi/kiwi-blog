@@ -18,5 +18,6 @@ updates:
       - "/0008-cdk-aws-chatbot"
       - "/0009-cdk-lambda-error-catcher"
       - "/0010-cdk-shared-items"
+      - "/0011-cdk-tagging-aspects"
     schedule:
       interval: "daily"

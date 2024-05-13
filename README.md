@@ -16,6 +16,7 @@ This repository contains working all the code examples related to the https://bl
 * [0009-cdk-lambda-error-catcher](./0009-cdk-lambda-error-catcher): This example shows you how you can catch Lambda function error messages and (optionally) post them to a Slack channel.
 * [0010-cdk-shared-items](./0010-cdk-shared-items): This example shows how to use the "shared items" concept to share an EventBus among multiple stacks, without
   having to explicitly pass around the dependency.
+* [0011-cdk-tagging-aspects](./0011-cdk-tagging-aspects): This example shows some use cases of the AWS CDK [Aspects](https://docs.aws.amazon.com/cdk/v2/guide/aspects.html) feature.
 
 ## Boilerplate (CDK)
 
