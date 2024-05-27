@@ -99,7 +99,6 @@ exports[`SharedItems utility 2`] = `
         },
         "Environment": {
           "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
             "EVENT_BUS_NAME": {
               "Fn::ImportValue": "Events:ExportsOutputRefEventBusSharedF95CAE4F55165ED6",
             },
@@ -237,11 +236,6 @@ exports[`SharedItems utility 3`] = `
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
           "S3Key": "322dff04884d4eaf9f26bdcc052ebeeb335d3515721cc0de4a4a63db7f835e8f.zip",
-        },
-        "Environment": {
-          "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-          },
         },
         "FunctionName": "Consumer-lambda",
         "Handler": "index.handler",

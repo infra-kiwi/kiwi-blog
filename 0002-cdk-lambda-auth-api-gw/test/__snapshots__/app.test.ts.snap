@@ -372,11 +372,6 @@ exports[`Stacks 1`] = `
           },
           "S3Key": "e7d2282f762836d0ac164f863e9d87b335a12369e8cf280816e2f7b859b75180.zip",
         },
-        "Environment": {
-          "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-          },
-        },
         "FunctionName": "Server-server-lambda",
         "Handler": "index.handler",
         "Role": {
@@ -482,7 +477,6 @@ exports[`Stacks 2`] = `
         },
         "Environment": {
           "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
             "SERVER_GATEWAY_REGION": {
               "Ref": "AWS::Region",
             },

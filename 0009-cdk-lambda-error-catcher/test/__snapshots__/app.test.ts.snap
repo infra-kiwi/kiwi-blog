@@ -49,7 +49,6 @@ exports[`KiwiStack 1`] = `
         },
         "Environment": {
           "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
             "ERRORS_SNS_TOPIC_ARN": "arn:aws:sns:my-region:123456789012:chatbot-my-channel",
           },
         },
@@ -229,11 +228,6 @@ exports[`KiwiStack 1`] = `
           },
           "S3Key": "a767cc3c3a836ec15d583d373cbb22a52b5d75e6870efa121b9b18adc4bea6b0.zip",
         },
-        "Environment": {
-          "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-          },
-        },
         "FunctionName": "Testtest-lambda-json",
         "Handler": "index.handler",
         "LoggingConfig": {
@@ -373,11 +367,6 @@ exports[`KiwiStack 1`] = `
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
           "S3Key": "a767cc3c3a836ec15d583d373cbb22a52b5d75e6870efa121b9b18adc4bea6b0.zip",
-        },
-        "Environment": {
-          "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-          },
         },
         "FunctionName": "Testtest-lambda-text",
         "Handler": "index.handler",
