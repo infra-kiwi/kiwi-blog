@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { PublishCommand, SNSClient } from '@aws-sdk/client-sns';
 import * as util from 'node:util';
 import {

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { EventBridgeHandler } from 'aws-lambda';
 import * as util from 'node:util';
 

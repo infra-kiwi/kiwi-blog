@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { APIGatewayProxyHandler } from 'aws-lambda';
 import { inspect } from 'node:util';
 

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { ChatBotPayload } from '../../lib/lambda/process-message.types';
 import { mockClient } from 'aws-sdk-client-mock';
 import {

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { KiwiStack } from '../lib/stack';
 import { App } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';

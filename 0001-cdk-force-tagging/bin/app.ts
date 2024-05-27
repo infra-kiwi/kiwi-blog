@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { KiwiStack } from '../lib/stack';

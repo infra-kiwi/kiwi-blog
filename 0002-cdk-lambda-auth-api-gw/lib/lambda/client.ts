@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { Handler } from 'aws-lambda';
 import { createSignedFetcher } from 'aws-sigv4-fetch';
 import { inspect } from 'node:util';

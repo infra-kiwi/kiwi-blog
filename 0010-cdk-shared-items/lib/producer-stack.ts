@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import * as cdk from 'aws-cdk-lib';
 import { aws_lambda, aws_lambda_nodejs, CfnOutput, Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';

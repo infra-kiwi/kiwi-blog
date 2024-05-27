@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 export const handler = ({ fail }: { fail?: boolean | 'log' }) => {
   if (fail === true) {
     throw new Error('This error was thrown!');

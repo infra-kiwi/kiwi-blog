@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import * as cdk from 'aws-cdk-lib';
 import { SourceStackWithOutputs } from '../lib/source-stack-with-outputs';
 import { DestinationStack } from '../lib/destination-stack';

@@ -19,5 +19,6 @@ updates:
       - "/0009-cdk-lambda-error-catcher"
       - "/0010-cdk-shared-items"
       - "/0011-cdk-tagging-aspects"
+      - "/0012-cdk-lambda-github"
     schedule:
       interval: "daily"

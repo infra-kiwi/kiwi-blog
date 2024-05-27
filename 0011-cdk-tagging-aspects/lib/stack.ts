@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import * as cdk from 'aws-cdk-lib';
 import { aws_sns, CfnOutput } from 'aws-cdk-lib';
 import { Construct } from 'constructs';

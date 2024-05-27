@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 import { parse } from 'yaml';
 import { ChatBotSlackChannelProps } from '../constructs/chatbot-slack-channel';
 import { readFile } from 'node:fs/promises';

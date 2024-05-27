@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ */
+
 // Our custom payload format
 export interface SlackMessagePayload {
   // The title of the Slack message, optional
