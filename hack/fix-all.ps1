@@ -6,7 +6,7 @@ $codeFolders = @()
 Get-ChildItem | Where-Object { $_.Name -match "^\d{4}-" } | ForEach-Object {
     Push-Location $_.Name
 
-    & npm install
+    & npm ci
     & npm run test
 
     Pop-Location
@@ -14,7 +14,7 @@ Get-ChildItem | Where-Object { $_.Name -match "^\d{4}-" } | ForEach-Object {
 
 Push-Location boilerplate-cdk
 
-& npm install
+& npm ci
 & npm run test
 
 Pop-Location

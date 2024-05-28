@@ -46,3 +46,44 @@ jobs:
       - name: Test
         working-directory: ${{ matrix.directory }}
         run: npm run test:ci
+
+  dependabot-fixer:
+    name: Dependabot fixer
+    needs: test
+    if: failure() && github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v1
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - shell: pwsh
+        run: |
+          ./hack/fix-all.ps1
+      - run: |
+          if git diff --quiet -- */test/__snapshots__/*.snap && git diff --cached --quiet -- */test/__snapshots__/*.snap; then
+            echo "No changes"
+            exit 0
+          fi
+          
+          branch="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+          git add */test/__snapshots__/*.snap
+          git commit -m "Autofix dependabot [dependabot skip]"
+          git push origin "HEAD:$branch"
+
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '@dependabot rebase'
+            })
