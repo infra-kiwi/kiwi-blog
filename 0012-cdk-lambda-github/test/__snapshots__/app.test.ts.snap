@@ -372,7 +372,6 @@ exports[`KiwiStack 1`] = `
         },
         "Environment": {
           "Variables": {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
             "GITHUB_WEBHOOK_TOKEN_SECRET_NAME": {
               "Fn::Join": [
                 "-",
