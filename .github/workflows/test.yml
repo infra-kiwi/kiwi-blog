@@ -50,7 +50,9 @@ jobs:
   dependabot-fixer:
     name: Dependabot fixer
     needs: test
-    if: failure() && github.event.pull_request.user.login == 'dependabot[bot]'
+    if: >
+      failure() && 
+      github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -87,3 +89,4 @@ jobs:
               repo: context.repo.repo,
               body: '@dependabot rebase'
             })
+          github-token: ${{ secrets.DEPENDABOT_PAT }}
