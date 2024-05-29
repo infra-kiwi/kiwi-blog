@@ -54,16 +54,13 @@ jobs:
       failure() && 
       github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
       - name: Dependabot metadata
         id: dependabot-metadata
         uses: dependabot/fetch-metadata@v1
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: ${{ github.head_ref }}
       - shell: pwsh
         run: |
           ./hack/fix-all.ps1
@@ -74,11 +71,16 @@ jobs:
           fi
           
           branch="${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
+          
+          # https://blog.infra.kiwi/pushing-new-commits-on-github-actions-with-a-personal-access-token-pat-8c9240fbc8d2
+          git config --unset "http.https://github.com/.extraheader"
+          git remote set-url origin "https://x-access-token:${DEPENDABOT_PAT}@github.com/${GITHUB_REPOSITORY}.git/"
+          
           git add */test/__snapshots__/*.snap
           git commit -m "Autofix dependabot [dependabot skip]"
           git push origin "HEAD:$branch"
+        env:
+          DEPENDABOT_PAT: ${{ secrets.DEPENDABOT_PAT }}
 
       - uses: actions/github-script@v7
         with:
