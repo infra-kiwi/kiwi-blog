@@ -78,6 +78,8 @@ jobs:
           # https://blog.infra.kiwi/pushing-new-commits-on-github-actions-with-a-personal-access-token-pat-8c9240fbc8d2
           git config --unset "http.https://github.com/.extraheader"
           git remote set-url origin "https://x-access-token:${DEPENDABOT_PAT}@github.com/${GITHUB_REPOSITORY}.git/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
           git add */test/__snapshots__/*.snap
           git commit -m "Autofix dependabot [dependabot skip]"
