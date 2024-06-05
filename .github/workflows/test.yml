@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
       - id: find-changes
-        uses: cmaster11/gha/action-get-changed-dirs@main
+        uses: cmaster11/gha@action-get-changed-dirs/v0
         with:
           base-sha: ${{ github.event.pull_request.base.sha }}
           regex: '^(\d+-|boilerplate-cdk)'
