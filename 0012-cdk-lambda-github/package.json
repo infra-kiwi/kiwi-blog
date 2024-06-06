@@ -28,7 +28,7 @@
     "lint:eslint:fix": "npm run lint:eslint -- --fix"
   },
   "devDependencies": {
-    "@aws-sdk/client-secrets-manager": "^3.590.0",
+    "@aws-sdk/client-secrets-manager": "^3.592.0",
     "@eslint/js": "^9.4.0",
     "@octokit/auth-app": "^7.1.0",
     "@octokit/rest": "^20.1.1",
