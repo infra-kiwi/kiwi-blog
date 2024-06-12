@@ -32,7 +32,7 @@
     "@types/jest": "^29.5.12",
     "@types/node": "20.14.2",
     "aws-cdk": "^2.144.0",
-    "cdk-nag": "^2.28.136",
+    "cdk-nag": "^2.28.141",
     "esbuild": "^0.21.4",
     "eslint-plugin-jest": "^28.6.0",
     "jest": "^29.7.0",
