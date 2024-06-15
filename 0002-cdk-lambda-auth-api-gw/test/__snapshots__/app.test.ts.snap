@@ -473,7 +473,7 @@ exports[`Stacks 2`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "37a710945d7da5c4037e1dc864eb348196057b163c3e2c4f0a6e2a41b81a87f9.zip",
+          "S3Key": "17fbffb5fdffa52449d1cdbc057cc14229396a751e862dd36211c9509aa901bb.zip",
         },
         "Environment": {
           "Variables": {
