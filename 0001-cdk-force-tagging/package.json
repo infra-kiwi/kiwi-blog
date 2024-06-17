@@ -39,7 +39,7 @@
     "ts-jest": "^29.1.4",
     "ts-node": "^10.9.2",
     "typescript": "~5.4.3",
-    "typescript-eslint": "^7.13.0"
+    "typescript-eslint": "^7.13.1"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.146.0",
