@@ -6,8 +6,6 @@ $codeFolders = @()
 Get-ChildItem | Where-Object { $_.Name -match "^\d{4}-" } | ForEach-Object {
     Push-Location $_.Name
 
-    & npm ci
-    & npm run test
     & npm run lint
 
     Pop-Location
@@ -15,8 +13,6 @@ Get-ChildItem | Where-Object { $_.Name -match "^\d{4}-" } | ForEach-Object {
 
 Push-Location boilerplate-cdk
 
-& npm ci
-& npm run test
 & npm run lint
 
 Pop-Location

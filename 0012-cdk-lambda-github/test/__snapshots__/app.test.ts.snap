@@ -368,7 +368,7 @@ exports[`KiwiStack 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "6cfb94031bff472ecab7b2fad41a2cd6e57115806a89b1bfe2ea3c9ffbb063e2.zip",
+          "S3Key": "4ca75e17a00ab8032f3cc87974c9b258a2eda6fb26470b096fd3ecf296daa331.zip",
         },
         "Environment": {
           "Variables": {

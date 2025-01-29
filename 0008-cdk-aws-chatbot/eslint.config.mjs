@@ -21,12 +21,8 @@ export default tseslint.config({
     }
   },
   rules: {
-    '@typescript-eslint/no-var-requires': 'off'
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-require-imports': 'off'
   },
-  ignores: [
-    'node_modules/**',
-    '*.d.ts',
-    'cdk.out/**',
-    '*.config.mjs'
-  ]
+  ignores: ['node_modules/**', '*.d.ts', 'cdk.out/**', '*.config.mjs']
 });
