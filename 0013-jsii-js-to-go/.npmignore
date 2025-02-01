@@ -1,0 +1,15 @@
+*.ts
+!*.d.ts
+
+# Exclude jsii outdir
+dist-jsii
+
+# Include .jsii and .jsii.gz
+!.jsii
+!.jsii.gz
+
+tsconfig*
+eslint*
+*prettier*
+jest*
+test*

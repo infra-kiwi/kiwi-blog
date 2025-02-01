@@ -20,5 +20,6 @@ updates:
       - "/0010-cdk-shared-items"
       - "/0011-cdk-tagging-aspects"
       - "/0012-cdk-lambda-github"
+      - "/0013-jsii-js-to-go"
     schedule:
       interval: "daily"

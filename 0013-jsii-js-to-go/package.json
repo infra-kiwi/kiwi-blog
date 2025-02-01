@@ -1,0 +1,64 @@
+{
+  "name": "kiwi-blog-0013-jsii-js-to-go",
+  "version": "0.1.0",
+  "engines": {
+    "node": "20"
+  },
+  "author": {
+    "name": "cmaster11",
+    "email": "info+kiwi@cmaster11.me",
+    "url": "https://blog.infra.kiwi"
+  },
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "repository": {
+    "url": "git://github.com/infra-kiwi/kiwi-blog.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test:ci": "jest",
+    "test": "jest -u",
+    "lint": "npm run check && npm run lint:prettier && npm run lint:eslint",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint",
+    "lint:prettier": "prettier --check '**/*.{ts,json}'",
+    "lint:prettier:fix": "prettier --write '**/*.{ts,json}'",
+    "lint:eslint": "eslint .",
+    "lint:eslint:fix": "npm run lint:eslint -- --fix",
+    "jsii:build": "jsii",
+    "jsii:build:watch": "jsii --watch",
+    "jsii:package": "rimraf dist-jsii && jsii-pacmak",
+    "jsii": "npm run jsii:build && npm run jsii:package"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "22.10.10",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.24.2",
+    "eslint-plugin-jest": "^28.11.0",
+    "jest": "^29.7.0",
+    "jsii": "^5.7.4",
+    "jsii-pacmak": "^1.106.0",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.21.0"
+  },
+  "stability": "stable",
+  "jsii": {
+    "versionFormat": "full",
+    "outdir": "dist-jsii",
+    "excludeTypescript": ["test/**"],
+    "targets": {
+      "go": {
+        "packageName": "jsii_js_to_go",
+        "moduleName": "kiwi_blog"
+      }
+    },
+    "tsconfig": "tsconfig.json",
+    "validateTsconfig": "strict"
+  }
+}

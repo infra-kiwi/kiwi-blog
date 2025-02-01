@@ -1,0 +1,8 @@
+*.js
+!jest.config.js
+!eslint.config.js
+*.d.ts
+node_modules
+dist
+dist-jsii
+.jsii
