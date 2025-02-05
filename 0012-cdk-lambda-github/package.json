@@ -28,14 +28,14 @@
     "lint:eslint:fix": "npm run lint:eslint -- --fix"
   },
   "devDependencies": {
-    "@aws-sdk/client-secrets-manager": "^3.734.0",
+    "@aws-sdk/client-secrets-manager": "^3.741.0",
     "@eslint/js": "^9.19.0",
     "@octokit/auth-app": "^7.1.4",
     "@octokit/rest": "^21.1.0",
-    "@octokit/webhooks": "^13.4.2",
+    "@octokit/webhooks": "^13.5.0",
     "@types/aws-lambda": "^8.10.147",
     "@types/jest": "^29.5.14",
-    "@types/node": "22.10.10",
+    "@types/node": "22.13.1",
     "aws-cdk": "^2.177.0",
     "aws-sdk-client-mock": "^4.1.0",
     "cross-env": "^7.0.3",
@@ -46,7 +46,7 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "~5.7.3",
-    "typescript-eslint": "^8.21.0"
+    "typescript-eslint": "^8.23.0"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.177.0",
