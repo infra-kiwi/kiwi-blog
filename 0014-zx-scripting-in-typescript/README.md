@@ -3,6 +3,8 @@
 This folder contains an example on how to set up a TypeScript repository to execute [`zx`](https://github.com/google/zx)
 scripts.
 
+You can find the related blog post at: https://blog.infra.kiwi/google-zx-or-how-i-got-rid-of-bash-in-my-life-1e68695f029d
+
 ## Usage
 
 Run:
