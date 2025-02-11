@@ -9,7 +9,10 @@ import tsConfig from '../tsconfig.json';
 
 $.verbose = true;
 
-// Compiles all the local .mts scripts to .mjs files and prepends a shebang to each
+//
+// Compiles all the local .ts/.mts scripts to .js/.mjs files
+// and prepends a shebang to each
+//
 
 const distDir = tsConfig.compilerOptions.outDir;
 
