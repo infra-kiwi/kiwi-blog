@@ -1,0 +1,25 @@
+{
+  "name": "0014-zx-scripting-in-typescript",
+  "devDependencies": {
+    "@aws-sdk/client-sts": "^3.738.0",
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0",
+    "zx": "^8.3.1"
+  },
+  "scripts": {
+    "compile": "npx tsx@4 ./scripts/compile.mts",
+    "check": "tsc --noEmit",
+    "lint": "npm run check && npm run lint:prettier && npm run lint:eslint",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint",
+    "lint:prettier": "prettier --check '**/*.{mts,ts,json}'",
+    "lint:prettier:fix": "prettier --write '**/*.{mts,ts,json}'",
+    "lint:eslint": "eslint .",
+    "lint:eslint:fix": "npm run lint:eslint -- --fix",
+    "test": "echo noop",
+    "test:ci": "echo noop"
+  }
+}

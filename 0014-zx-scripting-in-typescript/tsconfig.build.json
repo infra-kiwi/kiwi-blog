@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["scripts/compile.mts", "eslint.config.*"]
+}

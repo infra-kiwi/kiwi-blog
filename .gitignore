@@ -3,3 +3,5 @@
 **/cdk.out
 **/cdk.context.json
 **/lambda-response.json
+**/dist
+**/dist-*
