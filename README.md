@@ -18,6 +18,9 @@ This repository contains working all the code examples related to the https://bl
   having to explicitly pass around the dependency.
 * [0011-cdk-tagging-aspects](./0011-cdk-tagging-aspects): This example shows some use cases of the AWS CDK [Aspects](https://docs.aws.amazon.com/cdk/v2/guide/aspects.html) feature.
 * [0012-cdk-lambda-github](./0012-cdk-lambda-github): This example shows how to set up a Lambda function that listens to GitHub webhooks and answers back.
+* [0013-jsii-js-to-go](./0013-jsii-js-to-go): This example shows how to use [JSII](https://aws.github.io/jsii/) to generate Go-compatible code from a TypeScript codebase.
+* [0014-zx-scripting-in-typescript](./0014-zx-scripting-in-typescript): This folder contains an example on how to set up a TypeScript repository to execute [`zx`](https://github.com/google/zx)
+  scripts.
 
 ## Boilerplate (CDK)
 
