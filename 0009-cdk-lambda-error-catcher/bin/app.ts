@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
 /*
- * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ * Copyright (c) 2024-2025. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
  */
 
 import * as cdk from 'aws-cdk-lib';
