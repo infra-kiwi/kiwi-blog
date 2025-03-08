@@ -3,6 +3,7 @@
   "devDependencies": {
     "@aws-sdk/client-sts": "^3.738.0",
     "@eslint/js": "^9.19.0",
+    "esbuild": "^0.25.0",
     "eslint": "^9.19.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
@@ -10,8 +11,10 @@
     "typescript-eslint": "^8.23.0",
     "zx": "^8.3.1"
   },
+  "type": "module",
   "scripts": {
     "compile": "npx tsx@4 ./scripts/compile.mts",
+    "bundle": "npx tsx@4 ./scripts/bundle.mts",
     "check": "tsc --noEmit",
     "lint": "npm run check && npm run lint:prettier && npm run lint:eslint",
     "lint:fix": "npm run lint:prettier:fix && npm run lint:eslint:fix && npm run lint",

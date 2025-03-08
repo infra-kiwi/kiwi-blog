@@ -18,3 +18,11 @@ npx tsx ./scripts/spinner.ts
 # Or, for JS-only ones
 npx zx ./scripts/purejs.mjs
 ```
+
+You can also **compile** the scripts in two ways:
+
+1. Simple transpile TS->JS, which will allow them to run via `npx zx --install SCRIPT_PATH`, installing any
+   dependencies at runtime. Try with: `npm run compile && ./dist/spinner.mjs`
+2. Full bundling via [ESBuild](https://esbuild.github.io/api/#external), which will allow them to run via 
+   `node SCRIPT_PATH`, and not require any online connectivity, at the cost of the increased file 
+   sizes. Try with: `npm run bundle && ./dist/spinner.mjs` 

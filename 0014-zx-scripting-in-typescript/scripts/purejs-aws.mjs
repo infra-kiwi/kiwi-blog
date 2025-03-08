@@ -3,7 +3,7 @@
  */
 
 import 'zx/globals';
-import sts from '@aws-sdk/client-sts';
+import * as sts from '@aws-sdk/client-sts';
 
 // You can invoke this script remotely with
 // npx zx --install https://github.com/infra-kiwi/kiwi-blog/blob/main/0014-zx-scripting-in-typescript/scripts/purejs-aws.mjs
