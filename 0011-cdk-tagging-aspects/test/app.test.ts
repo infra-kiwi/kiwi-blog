@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2024. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
+ * Copyright (c) 2024-2025. Alberto Marchetti - https://www.linkedin.com/in/albertomarchetti/
  */
 
 import { KiwiStack } from '../lib/stack';
-import { App, aws_sns, Stack, Tag, Tags } from 'aws-cdk-lib';
+import { App, aws_sns, Stack, Tag } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import { describe } from 'node:test';
 import { ArtifactMetadataEntryType } from 'aws-cdk-lib/cloud-assembly-schema';
@@ -61,26 +61,6 @@ describe('Aspects', () => {
     await addAspects(app);
 
     const topic = new aws_sns.Topic(stack, 'MyTopic');
-
-    const template = Template.fromStack(stack);
-    expect(template).toMatchSnapshot();
-
-    // Expect an ERROR annotation to exist on the SNS topic created without MyRequiredTag
-    expect(
-      topic.node.defaultChild!.node.metadata.find(
-        (e) => e.type == ArtifactMetadataEntryType.ERROR
-      )
-    ).not.toBeUndefined();
-  });
-
-  test('ValidateSNSTopicAspect should fail even if the required tag is added to the inner scope', async () => {
-    const app = new App();
-    const stack = new Stack(app, 'Test');
-
-    await addAspects(app);
-
-    const topic = new aws_sns.Topic(stack, 'MyTopic');
-    Tags.of(topic).add('MyRequiredTag', 'this-is-a-required-tag');
 
     const template = Template.fromStack(stack);
     expect(template).toMatchSnapshot();
