@@ -22,7 +22,7 @@
     "lint:prettier:fix": "prettier --write '**/*.{mts,ts,json}'",
     "lint:eslint": "eslint .",
     "lint:eslint:fix": "npm run lint:eslint -- --fix",
-    "test": "echo noop",
-    "test:ci": "echo noop"
+    "test": "npm run compile && npm run bundle",
+    "test:ci": "npm run test"
   }
 }

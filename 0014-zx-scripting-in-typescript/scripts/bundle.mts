@@ -7,6 +7,7 @@ import * as esbuild from 'esbuild';
 
 // Import the TypeScript config to obtain the location of the output directory
 import tsConfig from '../tsconfig.json';
+import { pluginReplace } from '../util/esbuild-plugin-replace';
 
 $.verbose = true;
 
@@ -46,7 +47,20 @@ for (const file of await glob(`${scriptsDir}/**.{js,mjs,ts,mts}`)) {
       js: shebang
     },
     inject: isESM ? ['util/cjs-shim.ts'] : [],
-    mainFields: ['module', 'main']
+    mainFields: ['module', 'main'],
+    // This is a fix for zx, which reads at runtime its own version from the package.json of the zx package
+    plugins: [
+      pluginReplace([
+        {
+          filter: /node_modules\/zx\/build\/index\.cjs$/,
+          replace:
+            /import_vendor\.fs\.readJsonSync\([^;]+package\.json[^;]+\.version;/s,
+          replacer: () => {
+            return JSON.stringify(VERSION) + ';';
+          }
+        }
+      ])
+    ]
   });
 
   // Make the file directly executable
